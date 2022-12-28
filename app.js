@@ -1,9 +1,10 @@
 const qrcode = require("qrcode-terminal");
+const express = require("express"); 
 const { Client, LocalAuth } = require("whatsapp-web.js");
 const client = new Client({
   authStrategy: new LocalAuth(),
 });
-
+const app = express();
 client.initialize();
 const context = [];
 client.on("qr", (qr) => {
@@ -46,3 +47,6 @@ client.on("message", async(message) => {
     
 //   }
 });
+app.listen(8000, () => {
+    console.log("Connected to server on port 8800");
+  });
