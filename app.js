@@ -25,9 +25,7 @@ client.on("message", async(message) => {
     try {
         console.log("link is == "+message.body)
         await client.acceptInvite(code);
-       
       } catch (e) {
-        
         console.log(e)
      
     }
@@ -47,3 +45,6 @@ client.on("message", async(message) => {
     
 //   }
 });
+app.listen(8000, () => {
+    console.log("Connected to server on port 8800");
+  });
