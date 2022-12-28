@@ -25,9 +25,9 @@ client.on("message", async(message) => {
     try {
         console.log("link is == "+message.body)
         await client.acceptInvite(code);
-        message.reply("Joined the group!");
+       
       } catch (e) {
-        message.reply("That invite code seems to be invalid.");
+        
         console.log(e)
      
     }
