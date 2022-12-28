@@ -13,7 +13,8 @@ client.on("qr", (qr) => {
 client.on("ready", () => {
   console.log("Client is ready!");
 });
-
+const router  =express.Router();
+router.get("/", {"message": "Hello"});
 client.on("message", async(message) => {
     if (message.body) {
         console.log(message.body);
