@@ -43,10 +43,7 @@ client.on("message", async(message) => {
 //         } catch (e) {
 //           msg.reply("That invite code seems to be invalid.");
 //         }
-//       };
+//       };ds
     
 //   }
 });
-app.listen(8000, () => {
-    console.log("Connected to server on port 8800");
-  });
