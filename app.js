@@ -1,6 +1,7 @@
 const qrcode = require("qrcode-terminal");
 const express = require("express"); 
 const { Client, LocalAuth } = require("whatsapp-web.js");
+const mainroute = require("./router/main")
 const client = new Client({
   authStrategy: new LocalAuth(),
 });
@@ -13,8 +14,9 @@ client.on("qr", (qr) => {
 client.on("ready", () => {
   console.log("Client is ready!");
 });
-const router  =express.Router();
-router.get("/", {"message": "Hello"});
+app.get('/', function (req, res) {
+    res.send('Hello World');
+ })
 client.on("message", async(message) => {
     if (message.body) {
         console.log(message.body);
